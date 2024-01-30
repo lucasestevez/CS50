@@ -1,3 +1,4 @@
-The THIEF is:
-The city the thief ESCAPED TO:
-The ACCOMPLICE is:
+The THIEF is: Brucer
+The city the thief ESCAPED TO: New York (LaGuardia Airport) ID: 36
+The ACCOMPLICE is: Robin
+
