@@ -8,6 +8,108 @@
         <title>SQLearning</title>
     </head>
     <body>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">SQLearning</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+          <div class="container">
+            <h1>Banco de Dados</h1>
+
+            <p>Segundo Korth, Silberschatz e Sudarshan, um banco de dados “[...] é uma
+              coleção de dados inter-relacionados, representando informações sobre um
+              domínio específico”.</p>
+
+            <p>Imagine que você trabalha em uma pequena loja que tem como principal
+              fonte de receita a comercialização de capinhas de celulares. A cada entrada
+              de mercadoria no estoque ou baixa ao realizar uma venda, é registrada a
+              respectiva ação em um caderno de registros. Tome por base que essa lojinha
+              venda uma capinha de celular por dia: ao longo de um mês, haverá 30 registros
+              de venda e de 2 a 3 registros de entrada de mercadoria. Bem fácil controlar
+              na caderneta, certo?</p>
+
+            <p>Mas então o dono da lojinha recebeu uma herança e resolveu comprar um
+              espaço no shopping mais movimentado da cidade para expandir os negócios.
+              De 30 capinhas ao mês, agora a venda aumentou para três mil capinhas. O seu
+              trabalho de registro na caderneta começou a ficar complexo e a tomar cada
+              vez mais tempo do seu dia. Para resolver o problema, um sobrinho do dono
+              da loja fez uma planilha eletrônica linda, cheia de fórmulas e que resolve mais
+              rapidamente seu problema de cadastro.</p>
+
+            <p>Como um excelente homem de negócios, seu chefe resolveu abrir 20 filiais
+              novas. Temos, então, 60 mil registros de venda de capinhas mais os registros
+              de entrada de estoque por mês. Se colocarmos que a quantidade de linhas
+              que uma planilha eletrônica suporta atualmente é cerca de um milhão, você
+              iria enchê-la em menos de 18 meses (ou um ano e meio). Além disso, essa
+              planilha ocuparia muito espaço no computador e você levaria muito tempo
+              para recuperar as informações inseridas ali em cada momento de venda.</p>
+
+            <p>Então você se cansa de trabalhar nessa loja, entra em uma empresa de tele-
+              fonia multinacional e se pega imaginando quantas planilhas eles possuem para
+              controlar todas as ligações que seus clientes fazem a cada minuto. Segundo a
+              ANATEL (BRASIL, 2018), a quantidade de linhas telefônicas fixas no Brasil já
+              passou a marca de 40 milhões e meio. Coloque nessa equação a quantidade de
+              linhas telefônicas móveis (celulares) e temos o caos das planilhas eletrônicas.
+              A solução para qualquer um dos casos apresentados, desde a lojinha que
+              vendia 30 capinhas de celular por mês até a grande companhia telefônica com
+              milhões de novos registros que precisam ser processados a cada segundo, é
+              uma só: banco de dados.</p>
+              
+            <h2>Como administrar um banco de dados</h2>
+
+            <p>A questão da administração de um banco de dados é ampla e complexa, sendo
+              debatida por diversos autores. Em resumo, você deve ter conhecimento de
+              que tipo de informação está alocada nas tabelas do seu banco de dados e,
+              principalmente, como manipular as informações que ali estão inseridas da
+              forma que necessita.</p>
+
+            <p>Um sistema de banco de dados é formado pelo software de banco de dados,
+              o repositório de tabelas denominado database e as próprias tabelas em si ou
+              tables. Dessa forma, um banco de dados para um sistema de agenda telefônica
+              teria o serviço do banco de dados executado, uma database e, dentro desta,
+              estariam as tabelas para gravar as informações de nome, endereço, contato
+              telefônico, e-mail, aniversário, foto, etc.</p>
+
+            <p>Portanto, para você conseguir realizar uma boa administração do banco
+              de dados, é necessário conhecer o negócio ou o projeto ao qual ele servirá.
+              De nada adianta ter tabelas que não são necessárias, pois isso impacta na
+              performance do serviço. No exemplo da agenda telefônica, se não existisse
+              o campo “contato telefônico”, o sistema ficaria inútil, pois uma agenda tele-
+              fônica precisa, obrigatoriamente, conter o campo para cadastro do telefone
+              do contato.</p>
+
+            <p>Como passo fundamental na administração correta de um banco de dados,
+              é essencial que você tenha a documentação base do sistema que utilizará
+              do banco de dados sob sua administração. Esse documento contemplará a
+              modelagem do banco de dados, os relacionamentos entre tabelas, como será
+              gravada cada informação, quais campos são obrigatórios e quais são opcionais,
+              a necessidade de indexação para melhorar a velocidade de consulta, etc.</p>
+
+            
         
+          </div>
     </body>
 </html>
