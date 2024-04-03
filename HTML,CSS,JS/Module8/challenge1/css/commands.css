@@ -1,0 +1,20 @@
+
+#row {
+    color: red;
+    padding: 1rem;
+}
+
+strong, h6 {
+    color: black;
+}
+
+span {
+    color: blue;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}

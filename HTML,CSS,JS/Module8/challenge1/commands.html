@@ -4,7 +4,7 @@
     <title>SQLearning</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="css/commands.css" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -26,6 +26,180 @@
 
     <div class="container">
 
+        <h3>Sumário</h3>
+        <ul class="container" id="content">
+          <li><a href="#introduction" type="button">Introdução</a></li>
+          <li><a href="#ddl" type="button">Data Definiton Language</a></li>
+          <li><a href="#dml" type="button">Data Maniuplation Language</a></li>
+          <li><a href="#dql" type="button">Data Query Language</a></li>
+          <li><a href="#dcl" type="button">Data Control Language</a></li>
+          <li><a href="#tcl_dtl" type="button">Trasiction Control Language</a></li>
+        </ul>
+
+        <h1 id="introduction">Comandos SQL</h1>
+
+        <p>A linguagem SQL pode ser dividida em 4 ou 5 (dependendo do autor, aqui vamos tratar com 5) 
+          ramificações, cada uma vai ter sua função específica, podendo ser: criar, consular, editar, 
+          controlar, etc. Vamos ver cada uma delas e seus comandos escritos na estrutura utilizada pelo MySQL.</p>
+
+        <h2 id="ddl">Data Definition Language (DDL):</h2>
+
+        <p>Utilizado para definir a estrutura do banco de dados. Entre seus comandos nós temos:</p>
+
+        <ul>
+          <li>CREATE: usada para criar objetos, como tabelas, índices, views e procedimentos armazenados.</li>
+          <ol id="list">
+            <li id="row"><h6>Criar um BD:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome;</strong></li>
+            <li id="row"><h6>Criar uma tabela:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome</strong>(<br>
+              <strong>coluna1</strong>  <span>tipo_dado</span> restrições<strong>,<br></strong>
+              <strong>coluna2</strong>  <span>tipo_dado</span> restrições<strong>,<br></strong>
+              <strong>coluna3</strong>  <span>tipo_dado</span> restrições<strong>,<br></strong>
+              [restrições extras]
+            <br>)<strong>;</strong></li>
+            <li id="row"><h6>Criar um índice:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome</strong>
+              ON <strong>tabela(coluna)</strong>;</li>
+          </ol>
+          <li>ALTER: usada para modificar a estrutura de objetos de banco de dados existentes, como adicionar
+            ou remover colunas de tabelas.</li>
+          <ol id="list">
+            <li id="row"><h6>Adicionar uma coluna:</h6>ALTER TABLE <strong>tabela</strong> ADD 
+              <strong>coluna</strong> <span>tipo_dado</span> CONSTRAINTS <strong>;</strong></li>
+            <li id="row"><h6>Excluir uma coluna:</h6> ALTER TABLE <strong>tabela</strong>DROP COLUMN
+            <strong>nome_coluna;</strong></li>
+            <li id="row"><h6>Alterar o tipo de dados de uma coluna:</h6>ALTER TABLE <strong>tabela</strong>
+            MODIFY COLUMN <strong>nome_coluna</strong> <span>tipo_dado</span> CONSTRAINTS<strong>;</strong></li>
+          </ol>
+          <li>DROP: usado para excluir objetos de banco de dados, como tabelas, índices e viewss.</li>
+          <ol id="list">
+            <li id="row"><h6>Excluir um BD:</h6>DROP DATABASE [IF EXISTS] <strong>nome;</strong></li>
+            <li id="row"><h6>Excluir tabelas:</h6>DROP TABLE [IF EXISTS] <strong>nome;</strong></li>
+            <li id="row"><h6>excluir um índice configurado:</h6>DROP INDEX <strong>nome</strong> ON 
+            <strong>nome_tabelea;</strong></li>
+          </ol>
+          <li>RENAME: usado para renomear objetos do banco de dados, como tabelas.
+            <ul id="list">
+              <li id="row"><h6>Renomear tabelas:</h6>RENAME TABLE <strong>nome_tabela</strong> TO 
+              <strong>novo_nome;</strong></li>
+            </ul>
+          </li>
+          <li>TRUNCATE: usado para remover todos os registros de uma tabela, mas mantém sua estrutura.
+            <ul id="list">
+              <li id="row"><h6>Remover registros de uma tabela:</h6>TRUNCATE TABLE <strong>nome_tabela;</strong></li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h2>Data Definiton Language (DML):</h2>
+
+        <p>Utilizado para manipular os dados dentro das tabelas. Entre seus comandos nós temos:</p>
+
+        <ul>
+          <li>INSERT: cria uma novo registro (linha) na tabela.
+            <ul id="list">
+              <li id="row">INSERT INTO <strong>nome_tabela(</strong><span>coluna1, coluna2, coluna3, ....,  
+                colunaN</span><strong>)</strong> VALUES <strong>(</strong><span>valor1, valor2, valor3,..., 
+                  valorN</span><strong>);</strong></li>
+            </ul>
+          </li>
+          <li>UPDATE: modifica um registros em uma tabela.
+            <ul id="list">
+              <li id="row">UPDATE <strong>nome_tabela</strong><br>SET <strong>coluna(s) = </strong>
+              <span>novo_valor</span><br>WHERE <strong>coluna = </strong><span>valor_filtro</span>
+              <strong>;</strong></li>
+            </ul>
+          </li>
+          <li>DELETE: exclui um ou mais registros selecionados de uma tabela.
+            <ul id="list">
+              <li id="row">DELETE FROM <strong>nome_tabela</strong><br>WHERE <strong>coluna = </strong>
+              <span>valor</span><strong>;</strong></li>
+            </ul>
+          </li>
+          <li>MERGE: combina dados de múltiplas tabelas, mesclando elementos das declarações <strong>INSERT</strong> 
+            e <strong>UPDATE</strong> (O MySQL não possui esta função nativamente, então escreverei utilizando o 
+            SQL Server).
+            <ul id="list">
+              <li id="row">MERGE INTO <strong>nome_tabela1</strong> AS <span>apelido_tabela1</span><br>USING 
+                <strong>nome_tabela2</strong> AS <span>apelido_tabela2</span><br>ON 
+                <span>apelido_tabela1<strong>.nome_coluna =</strong> apelido_tabela2<strong>.nome_coluna</strong></span><br>
+                WHEN MATCHED THEN<br>UPDATE SET<br><span>apelido_tabela1<strong>.nome_coluna =</strong> 
+                apelido_tabela2<strong>.nome_coluna,</strong></span><br><span>apelido_tabela1<strong>.nome_coluna 
+                =</strong> apelido_tabela2<strong>.nome_coluna</strong></span><br>WHEN NOT MATCHED BY TARGET THEN<br>
+                INSERT <strong>(</strong> <span>coluna1, coluna2, coluna3, ..., colunaN</span><strong>)</strong>
+                <br>VALUES <strong>(</strong> <span>coluna1, coluna2, coluna3, ..., colunaN</span><strong>)</strong>
+                <br>WHEN NOT MATCHED BY SOURCE THEN DELETE<strong>;</strong></li>
+            </ul>
+          </li>
+        </ul>
+
+        <h2>Data Query Language (DQL):</h2>
+
+        <p>É utilizado para consultar (pegar) os dados em uma ou mais tabelas. Comando:</p>
+
+        <ul>
+          <li>SELECT: seleciona e recupera dados de uma ou mais tabelas.
+            <ol>
+              <li id="row"><h6>SELECT:</h6>SELECT <strong>coluna(s)</strong> FROM <strong>nome_tabela</strong></li>
+              <li id="row"><h6>SELECT INTO:</h6>SELECT <strong>coluna(s)</strong><br>INTO <span>nova_tabela</span><br>
+              FROM <strong>tabela_atual</strong><br>[WHERE <strong>coluna = </strong><span>valor</span>]<br>
+              [ORDER BY <strong>coluna</strong>]<br>[GROUP BY <strong>coluna1, coluna2, coluna3, ..., colunaN</strong>
+              ]<strong>;</strong></li>
+            </ol>
+          </li>
+        </ul>
+
+        <h2>Data Control Language (DCL):</h2>
+
+        <p>Envolve os comando relacionados ao controle de acesso e privilégios do bd.</p>
+
+        <ul>
+          <li>GRANT: concede permissões a usuários para acessar e modificar dados do bd.</li>
+          <ul>
+            <li id="row"><h6>Sintaxe:</h6>GRANT <strong>privilégio</strong> ON <strong>objeto_para</strong> ON 
+              <span>nome_do_objeto</span> TO <span>'usuario'@'host'</span><strong>;</strong>
+            </li>
+            <li id="row"><h6>Exemplo:</h6>GRANT SLECT ON <strong>nome_tabela</strong> TO <span>'usuario'@'host'</span>
+              <strong>;</strong></li>
+          </ul>
+          <li>EVOKE: retira permissões a usuários para acessar e modificar dados do bd.</li>
+          <ul>
+            <li id="row"><h6>Sintaxe:</h6>REVOKE <strong>privilégio</strong> ON <strong>objeto_de</strong> FROM 
+              <span>'usuario'@'host'</span><strong>;</strong></li>
+            <li id="row"><h6>Exemplo:</h6>REVOKE SELECT ON <strong>nome_tabela</strong> FROM 
+              <span>'usuario'@'host'</span><strong>;</strong></li>
+          </ul>
+          <li>Legenda:</li>
+          <ol>
+            <li><strong>privilégio</strong>: refere-se ao tipo de privilégio que está sendo concedido, como SELECT, INSERT, DELETE, CREATE,
+              DROP, etc.</li>
+            <li><strong>objeto_para e objeto_de</strong>: indica o objeto específico para o qual os privilégio estão 
+              sendo concedidos, como tabela, banco de dados ou função.</li>
+            <li><strong>nome_do_objeto</strong>: é o nome do objeto para o qual os privilégios estão sendo dados.</li>
+            <li><strong>usuário@host</strong>: especifica o usuário e o host aos quais os privilégios estão 
+              sendo concedidos.</li>
+          </ol>
+        </ul>
+
+        <h2>Trasiction Control Language (TCL):</h2>
+
+        <p>São comandos utilizados para gerenciar transações no banco de dados, garantindo a consistência e integridade 
+          dos dados.</p>
+
+        <ul>
+          <li>BEGIN TRANSACTION: inicia uma transação, que é um conjunto de operações que devem ser 
+            executadas como um todo.</li>
+          <li>COMMIT: finaliza a transaç~so e aplica as alterações ao bd.</li>
+          <li>ROLLBACK: desfaz as alterações feitas na transação e restaura o estado anterior do bd.</li>
+          <li>SAVE POINT: cria um ponto de salvamento em uma transação.</li>
+          <ul>
+            <li id="row"><h6>Exemplo de transação:</h6>BEGIN TRANSACTION;<br>INSERT INTO <strong>nome_tabela (</strong>
+            <span>coluna1, coluna2, coluna3, ..., colunaN</span><strong>)</strong> VALUES <strong>(</strong>
+            <span>valor1, valor2, valor3, ..., valorN</span><strong>);</strong><br>SAVEPOINT <strong>ponto_salvo</strong>
+            <br>UPDATE <strong>nome_tabela</strong> SET <strong>coluna1 = </strong><span>novo_valor</span> WHERE 
+            <strong>coluna2 = </strong><span>outro_valor</span><strong>;</strong><br>IF 
+            <strong>operacoes_bem_sucedidas</strong> THEN<br>COMMIT<strong>;</strong><br>ELSE<br>ROLLBACK TO 
+            <strong>ponto_salvo;</strong>END IF<strong>;</strong></li>
+          </ul>
+        </ul>
     </div>    
   </body>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
