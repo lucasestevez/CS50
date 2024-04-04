@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SQLearning</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" >
+    <link href="css/data_normalization.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index.html">SQLearning</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="index.html">Introdução</a>
+            <a class="nav-link " href="concepts.html">Conceitos</a>
+            <a class="nav-link" href="commands.html">Comandos</a>
+            <a class="nav-link active" href="data_normalization.html">Normalização de Dados</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+
+        <h3>Sumário</h3>
+        <ul class="container" id="content">
+          <li><a href="#intro" type="button">Intro</a></li>
+          <li><a href="#normalization_shapes" type="button">Formas de Normalização</a></li>
+          <li><a href="#example" type="button">Exemplo</a></li>
+        </ul>
+        
+        <h1 id="intro">Normalização de Dados</h1>
+        
+        <p>A normalização de dados em SQL é um processo de design de banco de dados que visa organizar e estruturar os 
+          dados de forma eficiente e segura, minimizando a redundância e a inconsistênica. Isso é feito através 
+          da divisão da tabela em várias tabelas menores, cada um com um único propósito.</p>
+
+        <p>Existem várias formas de normaização, geralmente referidas como formas normais, sendo as mais comuns: </p>
+
+        <ol id="normalization_shapes">
+          <li><strong>Primeira Forma Normal (1FN):</strong>
+            <ul>
+              <li>Cada atributo deve ter um único valor atômico (sem valores compostos ou multivalorados).</li>
+              <li>Cada registro de linha deve ser único e identificado por uma chave primaria.</li>
+              <li>Não deve haver grupos repetidos de atributos.</li>
+            </ul>
+          </li>
+          <li><strong>Segunda Forma Normal (2FN):</strong></li>
+          <ul>
+            <li>A tabela deve estar na 1FN.</li>
+            <li>Todos os atributos mão-chave devem ser completamente dependentes da chave primária.</li>
+            <li>Não deve haver dependência transitiva entre os atributos não chave.</li>
+          </ul>
+          <li><strong>Terceira Forma Normal (3FN):</strong></li>
+          <ul>
+            <li>A tabela deve estar na 2FN.</li>
+            <li>Todos os taributos não-chave devem ser dependentes transitivamnete da chave primária e não de outros 
+              atributos não chave.</li>
+            <li>Não deve haver dependência funcional entre atributos não-chave.</li>
+          </ul>
+          <li><strong>Forma Normal Boyce-Codd (FNBC)</strong></li>
+          <ul>
+            <li>A tabela deve estar na 3FN.</li>
+            <li>Todos os atributos não-chave depender funcionalmente diretamente da chave primária.</li>
+            <li>Não deve haver dependências funcionais onde o determinante não é a chave primária completa.</li>
+          </ul>
+        </ol>
+        
+        <h2 id="example">Exemplo</h2>
+
+        <p>Este exemplo de normalização de dados será baseado em uma loja fictícia de vendas de roupas, em que precisamos
+        normalizar a estrutura do banco de dados da empresa.</p>
+        
+        <ol>
+          <li class="example">
+            <strong>Não Estando nas Formas Normais:</strong>
+            <ul class="example_list">
+              <li>
+                <strong>Tabela não na 1FN:</strong>
+                <img src="img/nao_1fn.png" alt="Imagem de uma tabela não estando na Primeira Forma Normal">
+                <ol>
+                  <li id="row">Alguns atributos se repete para o mesmo cliente.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela não na 2FN:</strong>
+                <img src="img/nao_2fn.png" alt="Imagem de uma tabela não estando na Segunda Forma Normal">
+                <ol>
+                  <li id="row">Atributo <strong>Nome_Produto</strong> e <strong>Descrição</strong> dependem de 
+                  <strong>ID_Produto</strong>, que não é a chave primária.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela não na 3FN: </strong>
+                <img src="img/nao_3fn.png" alt="Imagem de uma tabela não estando na Terceira Forma Normal">
+                <ol>
+                  <li id="row">Atributo <strong>Salário</strong> depende de <strong>ID_Cargo</strong>, que não é a chave 
+                  primária.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela não na FNBC: </strong>
+                <img src="img/nao_fnbc2.png" alt="Imagem de uma tabela não estando na Forma Normal Boyce-Codd ">
+                <ol>
+                  <li id="row">A chave primária <strong>ID_Cliente</strong> não determina unicamente de 
+                  <strong>Endereço_Secundário</strong>.</li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li class="example">
+            <strong>Estando nas Formas Normais:</strong>
+            <ul class="example_list">
+              <li>
+                <strong>Tabela na 1FN:</strong>
+                <img src="img/na_1fn.png" alt="Imagem de uma tabela estando na Primeira Forma Normal">
+                <ol class="explanation">
+                  <li id="row">Todos os atributos são atômicos (sem valores compostos ou multivalorados).</li>
+                  <li id="row">Cada registro é único e identificado pela chave primária <strong>ID_Cliente</strong>.</li>
+                  <li id="row">Não há grupos repetidos de atributos.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela na 2FN:</strong>
+                <img src="img/na_2fn.png" alt="Imagem de uma tabela estando na Segunda Forma Normal">
+                <ol class="explanation">
+                  <li id="row">A tabela está na 1FN.</li>
+                  <li id="row">Todos os atributos não-chave (<strong>Data_Pedido</strong> e <strong>Valor_Total</strong>) 
+                    são completamente dependentes da chave primária <strong>ID_Pedido</strong>.</li>
+                  <li id="row">Não há dependência transitiva entre os atributos não-chave.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela na 3FN:</strong>
+                <img src="img/na_1fn.png" alt="Imagem de uma tabela estando na Terceira Forma Normal">
+                <ol class="explanation">
+                  <li id="row">A tabela está na 2FN.</li>
+                  <li id="row">Todos os atributos não-chave (<strong>Descrição</strong> e <strong>Preço</strong>) 
+                    são dependentes transitivamente da chave primária <strong>ID_Produto</strong> e não de outros 
+                    atributos não-chave.</li>
+                  <li id="row">Não há dependência funcional entre atributos não-chave.</li>
+                </ol>
+              </li>
+              <li>
+                <strong>Tabela na FNBC:</strong>
+                <img src="img/nao_fnbc1.png" alt="Imagem de uma tabela estando na Forma Normal Boyce-Codd"><br>
+                <p>Para normalizar a tabela FNBC, podemos criar duas novas tabelas:</p><br>
+                <ol class="explanation">
+                  <li id="row"><strong>Tabela:</strong> Funcionários</li>
+                  <img src="img/na_fnbc1.png" alt="Imagem de uma tabela chamada Funcionários" style="width: 30rem;">
+                  <li id="row"><strong>Tabela:</strong> Cargos</li>
+                  <img src="img/na_fnbc2.png" alt="Imagem de uma tabela chamada Cargos" style="width: 30rem;">
+                </ol>
+              </li>
+            </ul>
+          </li>
+        </ol>
+     </div>    
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</html>

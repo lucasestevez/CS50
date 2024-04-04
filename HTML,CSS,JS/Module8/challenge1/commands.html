@@ -9,7 +9,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">SQLearning</a>
+        <a class="navbar-brand" href="/index.html">SQLearning</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -18,8 +18,7 @@
             <a class="nav-link" aria-current="page" href="index.html">Introdução</a>
             <a class="nav-link" href="concepts.html">Conceitos</a>
             <a class="nav-link active" href="commands.html">Comandos</a>
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-          </div>
+            <a class="nav-link" href="data_normalization.html">Normalização de Dados</a>
         </div>
       </div>
     </nav>
@@ -47,7 +46,7 @@
         <p>Utilizado para definir a estrutura do banco de dados. Entre seus comandos nós temos:</p>
 
         <ul>
-          <li>CREATE: usada para criar objetos, como tabelas, índices, views e procedimentos armazenados.</li>
+          <li><strong>CREATE</strong>: usada para criar objetos, como tabelas, índices, views e procedimentos armazenados.</li>
           <ol id="list">
             <li id="row"><h6>Criar um BD:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>Criar uma tabela:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome</strong>(<br>
@@ -59,7 +58,7 @@
             <li id="row"><h6>Criar um índice:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome</strong>
               ON <strong>tabela(coluna)</strong>;</li>
           </ol>
-          <li>ALTER: usada para modificar a estrutura de objetos de banco de dados existentes, como adicionar
+          <li><strong>ALTER</strong> : usada para modificar a estrutura de objetos de banco de dados existentes, como adicionar
             ou remover colunas de tabelas.</li>
           <ol id="list">
             <li id="row"><h6>Adicionar uma coluna:</h6>ALTER TABLE <strong>tabela</strong> ADD 
@@ -69,20 +68,20 @@
             <li id="row"><h6>Alterar o tipo de dados de uma coluna:</h6>ALTER TABLE <strong>tabela</strong>
             MODIFY COLUMN <strong>nome_coluna</strong> <span>tipo_dado</span> CONSTRAINTS<strong>;</strong></li>
           </ol>
-          <li>DROP: usado para excluir objetos de banco de dados, como tabelas, índices e viewss.</li>
+          <li><strong>DROP</strong>: usado para excluir objetos de banco de dados, como tabelas, índices e viewss.</li>
           <ol id="list">
             <li id="row"><h6>Excluir um BD:</h6>DROP DATABASE [IF EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>Excluir tabelas:</h6>DROP TABLE [IF EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>excluir um índice configurado:</h6>DROP INDEX <strong>nome</strong> ON 
             <strong>nome_tabelea;</strong></li>
           </ol>
-          <li>RENAME: usado para renomear objetos do banco de dados, como tabelas.
+          <li><strong>RENAME</strong>: usado para renomear objetos do banco de dados, como tabelas.
             <ul id="list">
               <li id="row"><h6>Renomear tabelas:</h6>RENAME TABLE <strong>nome_tabela</strong> TO 
               <strong>novo_nome;</strong></li>
             </ul>
           </li>
-          <li>TRUNCATE: usado para remover todos os registros de uma tabela, mas mantém sua estrutura.
+          <li><strong>TRUNCATE</strong>: usado para remover todos os registros de uma tabela, mas mantém sua estrutura.
             <ul id="list">
               <li id="row"><h6>Remover registros de uma tabela:</h6>TRUNCATE TABLE <strong>nome_tabela;</strong></li>
             </ul>
@@ -94,27 +93,27 @@
         <p>Utilizado para manipular os dados dentro das tabelas. Entre seus comandos nós temos:</p>
 
         <ul>
-          <li>INSERT: cria uma novo registro (linha) na tabela.
+          <li><strong>INSERT</strong>: cria uma novo registro (linha) na tabela.
             <ul id="list">
               <li id="row">INSERT INTO <strong>nome_tabela(</strong><span>coluna1, coluna2, coluna3, ....,  
                 colunaN</span><strong>)</strong> VALUES <strong>(</strong><span>valor1, valor2, valor3,..., 
                   valorN</span><strong>);</strong></li>
             </ul>
           </li>
-          <li>UPDATE: modifica um registros em uma tabela.
+          <li><strong>UPDATE</strong>: modifica um registros em uma tabela.
             <ul id="list">
               <li id="row">UPDATE <strong>nome_tabela</strong><br>SET <strong>coluna(s) = </strong>
               <span>novo_valor</span><br>WHERE <strong>coluna = </strong><span>valor_filtro</span>
               <strong>;</strong></li>
             </ul>
           </li>
-          <li>DELETE: exclui um ou mais registros selecionados de uma tabela.
+          <li><strong>DELETE</strong>: exclui um ou mais registros selecionados de uma tabela.
             <ul id="list">
               <li id="row">DELETE FROM <strong>nome_tabela</strong><br>WHERE <strong>coluna = </strong>
               <span>valor</span><strong>;</strong></li>
             </ul>
           </li>
-          <li>MERGE: combina dados de múltiplas tabelas, mesclando elementos das declarações <strong>INSERT</strong> 
+          <li><strong>MERGE</strong>: combina dados de múltiplas tabelas, mesclando elementos das declarações <strong>INSERT</strong> 
             e <strong>UPDATE</strong> (O MySQL não possui esta função nativamente, então escreverei utilizando o 
             SQL Server).
             <ul id="list">
@@ -136,7 +135,7 @@
         <p>É utilizado para consultar (pegar) os dados em uma ou mais tabelas. Comando:</p>
 
         <ul>
-          <li>SELECT: seleciona e recupera dados de uma ou mais tabelas.
+          <li><strong>SELECT</strong>: seleciona e recupera dados de uma ou mais tabelas.
             <ol>
               <li id="row"><h6>SELECT:</h6>SELECT <strong>coluna(s)</strong> FROM <strong>nome_tabela</strong></li>
               <li id="row"><h6>SELECT INTO:</h6>SELECT <strong>coluna(s)</strong><br>INTO <span>nova_tabela</span><br>
@@ -152,7 +151,7 @@
         <p>Envolve os comando relacionados ao controle de acesso e privilégios do bd.</p>
 
         <ul>
-          <li>GRANT: concede permissões a usuários para acessar e modificar dados do bd.</li>
+          <li><strong>GRANT</strong>: concede permissões a usuários para acessar e modificar dados do bd.</li>
           <ul>
             <li id="row"><h6>Sintaxe:</h6>GRANT <strong>privilégio</strong> ON <strong>objeto_para</strong> ON 
               <span>nome_do_objeto</span> TO <span>'usuario'@'host'</span><strong>;</strong>
@@ -160,7 +159,7 @@
             <li id="row"><h6>Exemplo:</h6>GRANT SLECT ON <strong>nome_tabela</strong> TO <span>'usuario'@'host'</span>
               <strong>;</strong></li>
           </ul>
-          <li>EVOKE: retira permissões a usuários para acessar e modificar dados do bd.</li>
+          <li><strong>EVOKE</strong>: retira permissões a usuários para acessar e modificar dados do bd.</li>
           <ul>
             <li id="row"><h6>Sintaxe:</h6>REVOKE <strong>privilégio</strong> ON <strong>objeto_de</strong> FROM 
               <span>'usuario'@'host'</span><strong>;</strong></li>
@@ -185,11 +184,11 @@
           dos dados.</p>
 
         <ul>
-          <li>BEGIN TRANSACTION: inicia uma transação, que é um conjunto de operações que devem ser 
+          <li><strong>BEGIN TRANSACTION</strong>: inicia uma transação, que é um conjunto de operações que devem ser 
             executadas como um todo.</li>
-          <li>COMMIT: finaliza a transaç~so e aplica as alterações ao bd.</li>
-          <li>ROLLBACK: desfaz as alterações feitas na transação e restaura o estado anterior do bd.</li>
-          <li>SAVE POINT: cria um ponto de salvamento em uma transação.</li>
+          <li><strong>COMMIT</strong>: finaliza a transaç~so e aplica as alterações ao bd.</li>
+          <li><strong>ROLLBACK</strong>: desfaz as alterações feitas na transação e restaura o estado anterior do bd.</li>
+          <li><strong>SAVE POINT</strong>: cria um ponto de salvamento em uma transação.</li>
           <ul>
             <li id="row"><h6>Exemplo de transação:</h6>BEGIN TRANSACTION;<br>INSERT INTO <strong>nome_tabela (</strong>
             <span>coluna1, coluna2, coluna3, ..., colunaN</span><strong>)</strong> VALUES <strong>(</strong>
