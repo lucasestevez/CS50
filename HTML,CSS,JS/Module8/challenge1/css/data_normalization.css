@@ -10,15 +10,32 @@ img {
     gap: 1rem;
 }
 
-.example_list {
+ul.example_list {
     display: flex;
     flex-direction: column;
     gap: 3rem;
     margin-bottom: 3rem;
 }
 
-.explanation {
+ul.explanation {
     display: flex;
     flex-direction: column;
     gap: 5px;
+}
+
+p {
+    padding: 3px;
+}
+
+h1, h2, h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+ol, ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
 }

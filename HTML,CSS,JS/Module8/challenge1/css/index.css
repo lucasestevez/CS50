@@ -1,0 +1,15 @@
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+p {
+    padding: 3px;
+}
+
+h1, h2, h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}

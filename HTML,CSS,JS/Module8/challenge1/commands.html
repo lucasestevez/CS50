@@ -47,7 +47,7 @@
 
         <ul>
           <li><strong>CREATE</strong>: usada para criar objetos, como tabelas, índices, views e procedimentos armazenados.</li>
-          <ol id="list">
+          <ol class="list">
             <li id="row"><h6>Criar um BD:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>Criar uma tabela:</h6>CREATE DATABASE [IF NOT EXISTS] <strong>nome</strong>(<br>
               <strong>coluna1</strong>  <span>tipo_dado</span> restrições<strong>,<br></strong>
@@ -60,7 +60,7 @@
           </ol>
           <li><strong>ALTER</strong> : usada para modificar a estrutura de objetos de banco de dados existentes, como adicionar
             ou remover colunas de tabelas.</li>
-          <ol id="list">
+          <ol class="list">
             <li id="row"><h6>Adicionar uma coluna:</h6>ALTER TABLE <strong>tabela</strong> ADD 
               <strong>coluna</strong> <span>tipo_dado</span> CONSTRAINTS <strong>;</strong></li>
             <li id="row"><h6>Excluir uma coluna:</h6> ALTER TABLE <strong>tabela</strong>DROP COLUMN
@@ -69,20 +69,20 @@
             MODIFY COLUMN <strong>nome_coluna</strong> <span>tipo_dado</span> CONSTRAINTS<strong>;</strong></li>
           </ol>
           <li><strong>DROP</strong>: usado para excluir objetos de banco de dados, como tabelas, índices e viewss.</li>
-          <ol id="list">
+          <ol class="list">
             <li id="row"><h6>Excluir um BD:</h6>DROP DATABASE [IF EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>Excluir tabelas:</h6>DROP TABLE [IF EXISTS] <strong>nome;</strong></li>
             <li id="row"><h6>excluir um índice configurado:</h6>DROP INDEX <strong>nome</strong> ON 
             <strong>nome_tabelea;</strong></li>
           </ol>
           <li><strong>RENAME</strong>: usado para renomear objetos do banco de dados, como tabelas.
-            <ul id="list">
+            <ul class="list">
               <li id="row"><h6>Renomear tabelas:</h6>RENAME TABLE <strong>nome_tabela</strong> TO 
               <strong>novo_nome;</strong></li>
             </ul>
           </li>
           <li><strong>TRUNCATE</strong>: usado para remover todos os registros de uma tabela, mas mantém sua estrutura.
-            <ul id="list">
+            <ul class="list">
               <li id="row"><h6>Remover registros de uma tabela:</h6>TRUNCATE TABLE <strong>nome_tabela;</strong></li>
             </ul>
           </li>
@@ -94,21 +94,21 @@
 
         <ul>
           <li><strong>INSERT</strong>: cria uma novo registro (linha) na tabela.
-            <ul id="list">
+            <ul class="list">
               <li id="row">INSERT INTO <strong>nome_tabela(</strong><span>coluna1, coluna2, coluna3, ....,  
                 colunaN</span><strong>)</strong> VALUES <strong>(</strong><span>valor1, valor2, valor3,..., 
                   valorN</span><strong>);</strong></li>
             </ul>
           </li>
           <li><strong>UPDATE</strong>: modifica um registros em uma tabela.
-            <ul id="list">
+            <ul class="list">
               <li id="row">UPDATE <strong>nome_tabela</strong><br>SET <strong>coluna(s) = </strong>
               <span>novo_valor</span><br>WHERE <strong>coluna = </strong><span>valor_filtro</span>
               <strong>;</strong></li>
             </ul>
           </li>
           <li><strong>DELETE</strong>: exclui um ou mais registros selecionados de uma tabela.
-            <ul id="list">
+            <ul class="list">
               <li id="row">DELETE FROM <strong>nome_tabela</strong><br>WHERE <strong>coluna = </strong>
               <span>valor</span><strong>;</strong></li>
             </ul>
@@ -116,7 +116,7 @@
           <li><strong>MERGE</strong>: combina dados de múltiplas tabelas, mesclando elementos das declarações <strong>INSERT</strong> 
             e <strong>UPDATE</strong> (O MySQL não possui esta função nativamente, então escreverei utilizando o 
             SQL Server).
-            <ul id="list">
+            <ul class="list">
               <li id="row">MERGE INTO <strong>nome_tabela1</strong> AS <span>apelido_tabela1</span><br>USING 
                 <strong>nome_tabela2</strong> AS <span>apelido_tabela2</span><br>ON 
                 <span>apelido_tabela1<strong>.nome_coluna =</strong> apelido_tabela2<strong>.nome_coluna</strong></span><br>
@@ -201,5 +201,5 @@
         </ul>
     </div>    
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </html>

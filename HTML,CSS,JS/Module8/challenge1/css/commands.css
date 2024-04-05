@@ -1,3 +1,11 @@
+p {
+    padding: 3px;
+}
+
+h1, h2, h3 {
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
 
 #row {
     color: red;
@@ -12,9 +20,16 @@ span {
     color: blue;
 }
 
-#list {
+.list {
     display: flex;
     flex-direction: column;
     padding-bottom: 3rem;
     padding-top: 1rem;
+    font-weight: 500;
+}
+
+ul.container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }

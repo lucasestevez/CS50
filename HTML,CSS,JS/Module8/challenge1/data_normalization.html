@@ -80,14 +80,14 @@
             <ul class="example_list">
               <li>
                 <strong>Tabela não na 1FN:</strong>
-                <img src="img/nao_1fn.png" alt="Imagem de uma tabela não estando na Primeira Forma Normal">
+                <img class="img-fluid"  src="img/nao_1fn.png" alt="Imagem de uma tabela não estando na Primeira Forma Normal">
                 <ol>
                   <li id="row">Alguns atributos se repete para o mesmo cliente.</li>
                 </ol>
               </li>
               <li>
                 <strong>Tabela não na 2FN:</strong>
-                <img src="img/nao_2fn.png" alt="Imagem de uma tabela não estando na Segunda Forma Normal">
+                <img class="img-fluid" src="img/nao_2fn.png" alt="Imagem de uma tabela não estando na Segunda Forma Normal">
                 <ol>
                   <li id="row">Atributo <strong>Nome_Produto</strong> e <strong>Descrição</strong> dependem de 
                   <strong>ID_Produto</strong>, que não é a chave primária.</li>
@@ -95,7 +95,7 @@
               </li>
               <li>
                 <strong>Tabela não na 3FN: </strong>
-                <img src="img/nao_3fn.png" alt="Imagem de uma tabela não estando na Terceira Forma Normal">
+                <img class="img-fluid" src="img/nao_3fn.png" alt="Imagem de uma tabela não estando na Terceira Forma Normal">
                 <ol>
                   <li id="row">Atributo <strong>Salário</strong> depende de <strong>ID_Cargo</strong>, que não é a chave 
                   primária.</li>
@@ -103,7 +103,7 @@
               </li>
               <li>
                 <strong>Tabela não na FNBC: </strong>
-                <img src="img/nao_fnbc2.png" alt="Imagem de uma tabela não estando na Forma Normal Boyce-Codd ">
+                <img class="img-fluid" src="img/nao_fnbc2.png" alt="Imagem de uma tabela não estando na Forma Normal Boyce-Codd ">
                 <ol>
                   <li id="row">A chave primária <strong>ID_Cliente</strong> não determina unicamente de 
                   <strong>Endereço_Secundário</strong>.</li>
@@ -116,7 +116,7 @@
             <ul class="example_list">
               <li>
                 <strong>Tabela na 1FN:</strong>
-                <img src="img/na_1fn.png" alt="Imagem de uma tabela estando na Primeira Forma Normal">
+                <img class="img-fluid" src="img/na_1fn.png" alt="Imagem de uma tabela estando na Primeira Forma Normal">
                 <ol class="explanation">
                   <li id="row">Todos os atributos são atômicos (sem valores compostos ou multivalorados).</li>
                   <li id="row">Cada registro é único e identificado pela chave primária <strong>ID_Cliente</strong>.</li>
@@ -125,7 +125,7 @@
               </li>
               <li>
                 <strong>Tabela na 2FN:</strong>
-                <img src="img/na_2fn.png" alt="Imagem de uma tabela estando na Segunda Forma Normal">
+                <img class="img-fluid" src="img/na_2fn.png" alt="Imagem de uma tabela estando na Segunda Forma Normal">
                 <ol class="explanation">
                   <li id="row">A tabela está na 1FN.</li>
                   <li id="row">Todos os atributos não-chave (<strong>Data_Pedido</strong> e <strong>Valor_Total</strong>) 
@@ -135,7 +135,7 @@
               </li>
               <li>
                 <strong>Tabela na 3FN:</strong>
-                <img src="img/na_1fn.png" alt="Imagem de uma tabela estando na Terceira Forma Normal">
+                <img class="img-fluid" src="img/na_1fn.png" alt="Imagem de uma tabela estando na Terceira Forma Normal">
                 <ol class="explanation">
                   <li id="row">A tabela está na 2FN.</li>
                   <li id="row">Todos os atributos não-chave (<strong>Descrição</strong> e <strong>Preço</strong>) 
@@ -146,13 +146,13 @@
               </li>
               <li>
                 <strong>Tabela na FNBC:</strong>
-                <img src="img/nao_fnbc1.png" alt="Imagem de uma tabela estando na Forma Normal Boyce-Codd"><br>
+                <img class="img-fluid" src="img/nao_fnbc1.png" alt="Imagem de uma tabela estando na Forma Normal Boyce-Codd"><br>
                 <p>Para normalizar a tabela FNBC, podemos criar duas novas tabelas:</p><br>
                 <ol class="explanation">
                   <li id="row"><strong>Tabela:</strong> Funcionários</li>
-                  <img src="img/na_fnbc1.png" alt="Imagem de uma tabela chamada Funcionários" style="width: 30rem;">
+                  <img class="img-fluid" src="img/na_fnbc1.png" alt="Imagem de uma tabela chamada Funcionários" style="width: 30rem;">
                   <li id="row"><strong>Tabela:</strong> Cargos</li>
-                  <img src="img/na_fnbc2.png" alt="Imagem de uma tabela chamada Cargos" style="width: 30rem;">
+                  <img class="img-fluid" src="img/na_fnbc2.png" alt="Imagem de uma tabela chamada Cargos" style="width: 30rem;">
                 </ol>
               </li>
             </ul>
@@ -160,5 +160,5 @@
         </ol>
      </div>    
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="main.js"></script>
 </html>
