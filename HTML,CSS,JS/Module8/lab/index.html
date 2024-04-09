@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>How many planets are there in the solar system?</h3>
+                <p id="text-response1"></p>
+                <button id="btn1" type="submit">5</button>
+                <button id="btn2" type="submit">6</button>
+                <button id="btn3" type="submit">7</button>
+                <button id="btn4" type="submit">8</button>
+                <button id="btn5" type="submit">9</button>
+            
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>What is the name of the science area that Stephen Hawking worked in?</h3>
+                <p id="text_response2"></p>
+                <input type="text" id="input_response" autocomplete="off">
+                <button id="btn_free" onclick="checkAnswerFree(this)" type="submit">Confirm</button>
+
+            </div>
+
+        </div>
+    </body>   
+        <script>
+
+        // TODO: Add code to check answers to questions
+        const btn1 = document.getElementById("btn1");    
+        const btn2 = document.getElementById("btn2");    
+        const btn3 = document.getElementById("btn3");    
+        const btn4 = document.getElementById("btn4");    
+        const btn5 = document.getElementById("btn5");   
+        const response_multiple = document.getElementById('text-response1');
+
+        btn1.addEventListener('click', () => {
+            btn1.style.backgroundColor = 'red';
+            response_multiple.innerHTML = 'Incorrect!';
+            response_multiple.style.color = 'red';
+
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        });
+
+        btn2.addEventListener('click', () => {
+            btn2.style.backgroundColor = 'red';
+            response_multiple.innerHTML = 'Incorrect!';
+            response_multiple.style.color = 'red';
+
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+            
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        });
+
+        btn3.addEventListener('click', () => {
+            btn3.style.backgroundColor = 'red';
+            response_multiple.innerHTML = 'Incorrect!';
+            response_multiple.style.color = 'red';
+
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+            
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        });
+
+        btn4.addEventListener('click', () => {
+            btn4.style.backgroundColor = 'green';
+            response_multiple.innerHTML = 'Correct!';
+            response_multiple.style.color = 'green';
+
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+        });
+
+        btn5.addEventListener('click', () => {
+            btn5.style.backgroundColor = 'red';
+            response_multiple.innerHTML = 'Incorrect!';
+            response_multiple.style.color = 'red';
+
+            btn1.disabled = true;
+            btn2.disabled = true;
+            btn3.disabled = true;
+            btn4.disabled = true;
+            btn5.disabled = true;
+            
+            setTimeout(() => {
+                location.reload();
+            }, 3000);
+        });
+        
+        function checkAnswerFree() {
+            const btn_free = document.getElementById('btn_free');
+            const input = document.getElementById('input_response');
+            const response = document.getElementById('text_response2');
+            var answer = ''+input.value;
+            answer = answer.replace(/\s/g, '').toLowerCase();
+
+            if (answer == 'cosmology') {
+                input.style.color = 'green';
+                response.innerHTML = 'Correct!';
+                response.style.color = 'green';
+                btn_free.disabled = true;
+                input.disabled = true;
+            } else {
+                input.style.color = 'red';
+                response.innerHTML = 'Incorrect!';
+                response.style.color = 'red';
+                setTimeout(() => {
+                    location.reload();
+                }, 3000);
+            }
+        }
+
+    </script>
+</html>
