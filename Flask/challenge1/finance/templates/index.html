@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block main %}
+
+<h2>My Stocks</h2>
+
+<h5><strong>Current Balances:</strong> {{cash | usd}}</h5>
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Owned Shares</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for balance in balances %}
+        <td>{{ balance.name }} [{{ balance.symbol }}]</td>
+        <td>{{ balance.price | usd}}</td>
+        <td>{{ balance.shares }}</td>
+        <td>{{ balance.total | usd }}</td>
+    </tbody>
+    {% endfor %}
+</table>
+
+{% endblock %}
